@@ -6,3 +6,4 @@ results/
 results/
 train_test_split/
 venv/
+.venv/
