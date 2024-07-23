@@ -1,2 +1,0 @@
---extra-index-url https://europe-west3-python.pkg.dev/rasa-releases/rasa-pro-python/simple
-rasa-pro~=3.8.7
