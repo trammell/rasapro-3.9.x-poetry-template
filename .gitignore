@@ -1,9 +1,7 @@
-.direnv/
 .rasa/
 cross_val_results/
 models/
 results/
 results/
 train_test_split/
-venv/
 .venv/
