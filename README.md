@@ -2,7 +2,7 @@
 
 Generic repository template for a Rasa Pro 3.9.x bot, using [`poetry`](https://python-poetry.org/).
 
-```console
+```shell
 # This template is for poetry v1.8
 poetry --version
 
