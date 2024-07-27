@@ -30,5 +30,5 @@ jobs:
           $(poetry run rasa --version; exit 0) >> $RASA_RUN_STDOUT
       - name: Actual versus expected
         run: |
-          echo $RASA_RUN_STDOUT
+          echo "aaa $RASA_RUN_STDOUT bbb"
           [[ "$RASA_RUN_STDOUT" =~ "Failed to validate Rasa Pro license" ]]
