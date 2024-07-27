@@ -13,19 +13,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-          cache: poetry
-      - name: Display Python version
-        run: python -c "import sys; print(sys.version)"
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
       - name: Install Rasa and dependencies
         run: poetry install
       - name: Verify that Rasa CLI is runnable
         env:
           RASA_PRO_LICENSE: aaaaa.bbbbb.ccccc
         run: |
-          [[ "$(poetry run rasa --version; exit 0)" =~ "Failed to validate Rasa Pro license" ]]
+          [[ "$(poetry run rasa --version; exit 0)" =~ "Failed to validate Rasa Pro license" ]]; echo $?
