@@ -27,7 +27,7 @@ jobs:
           RASA_PRO_LICENSE: aaaaa.bbbbb.ccccc
         continue-on-error: true
         run: |
-          $(poetry run rasa --version; exit 0) >> $RASA_RUN_STDOUT
+          echo "RASA_RUN_STDOUT='$(poetry run rasa --version)'" >> $GITHUB_ENV
       - name: Actual versus expected
         run: |
           echo "aaa $RASA_RUN_STDOUT bbb"
