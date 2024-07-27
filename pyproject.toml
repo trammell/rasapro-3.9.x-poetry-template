@@ -9,10 +9,10 @@ package-mode = false
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.11"
-rasa-pro = { version = "3.9.2", source = "rasa" }
+rasa-pro = { version = "3.9.2", source = "rasa-pro-python" }
 
 [[tool.poetry.source]]
-name = "rasa"
+name = "rasa-pro-python"
 url = "https://europe-west3-python.pkg.dev/rasa-releases/rasa-pro-python/simple"
 priority = "supplemental"
 
