@@ -27,4 +27,5 @@ jobs:
       - name: Verify that Rasa CLI is runnable
         env:
           RASA_PRO_LICENSE: aaaaa.bbbbb.ccccc
-        run: poetry run rasa --help
+        run: |
+          [[ "$(poetry run rasa --version)" =~ "Failed to validate Rasa Pro license" ]]
