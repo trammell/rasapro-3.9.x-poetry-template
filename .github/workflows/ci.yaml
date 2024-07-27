@@ -25,6 +25,7 @@ jobs:
           RASA_PRO_LICENSE: aaaaa.bbbbb.ccccc
         run: |
           TMP="$(poetry run rasa --version 2>&1)"
+          echo $TMP
           echo "RASA_RUN_STDOUT='$TMP'" >> $GITHUB_ENV
       - name: Compare actual output to known good
         run: |
