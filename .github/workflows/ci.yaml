@@ -23,11 +23,11 @@ jobs:
       - name: Install Rasa and dependencies
         run: poetry install
       - name: Verify that Rasa CLI is runnable
+        continue-on-error: true
         env:
           RASA_PRO_LICENSE: aaaaa.bbbbb.ccccc
-        continue-on-error: true
         run: |
-          echo "RASA_RUN_STDOUT='$(poetry run rasa --version)'" >> $GITHUB_ENV
+          echo "RASA_RUN_STDOUT='$(poetry run rasa --version 2>&1)'" >> $GITHUB_ENV
       - name: Actual versus expected
         run: |
           echo "aaa $RASA_RUN_STDOUT bbb"
