@@ -25,5 +25,5 @@ jobs:
         run: poetry install
       - name: Verify that Rasa CLI is runnable
         env:
-          RASA_PRO_LICENSE: aaaaaaaaaaaa
+          RASA_PRO_LICENSE: ${{ secrets.RASA_PRO_LICENSE }}
         run: poetry run rasa --version
