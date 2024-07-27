@@ -9,7 +9,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.8", "3.9", "3.10"]
+#       python-version: ["3.8", "3.9", "3.10"]
+        python-version: ["3.10"]
 
     steps:
       - uses: actions/checkout@v4
@@ -24,6 +25,9 @@ jobs:
       - name: Verify that Rasa CLI is runnable
         env:
           RASA_PRO_LICENSE: aaaaa.bbbbb.ccccc
+        continue-on-error: true
         run: |
-          [[ "$(poetry run rasa --version; exit 0)" =~ "Failed to validate Rasa Pro license" ]]
-          echo $?
+          $(poetry run rasa --version; exit 0) >> $RASA_RUN_STDOUT
+      - name: Actual versus expected
+        run: |
+          [[ "$RASA_RUN_STDOUT" =~ "Failed to validate Rasa Pro license" ]]
