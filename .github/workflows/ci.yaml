@@ -24,6 +24,6 @@ jobs:
       - name: Install Rasa and dependencies
         run: poetry install
       - name: Verify that Rasa CLI is runnable
-        env:
-          RASA_PRO_LICENSE: aaaaa.bbbbb.ccccc
+#       env:
+#         RASA_PRO_LICENSE: aaaaa.bbbbb.ccccc
         run: poetry run rasa --help
