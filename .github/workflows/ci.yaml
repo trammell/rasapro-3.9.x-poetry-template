@@ -14,21 +14,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
+      # https://github.com/marketplace/actions/setup-and-cache-python-poetry
+      - name: Set up Python, poetry, and dependencies
+        uses: packetcoders/action-setup-cache-python-poetry@main
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install poetry
-        uses: abatilo/actions-poetry@v2
-      - name: Install Rasa and dependencies
-        run: poetry install
-      - name: Verify that Rasa CLI is runnable
+      - name: Save the output of 'rasa --version'
         continue-on-error: true
         env:
           RASA_PRO_LICENSE: aaaaa.bbbbb.ccccc
         run: |
-          echo "RASA_RUN_STDOUT='$(poetry run rasa --version 2>&1)'" >> $GITHUB_ENV
-      - name: Actual versus expected
+          TMP="$(poetry run rasa --version 2>&1)"
+          echo "RASA_RUN_STDOUT='$TMP'" >> $GITHUB_ENV
+      - name: Compare actual output to known good
         run: |
-          echo "aaa $RASA_RUN_STDOUT bbb"
           [[ "$RASA_RUN_STDOUT" =~ "Failed to validate Rasa Pro license" ]]
