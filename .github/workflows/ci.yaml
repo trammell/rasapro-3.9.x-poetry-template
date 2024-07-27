@@ -20,7 +20,7 @@ jobs:
         run: python -c "import sys; print(sys.version)"
       - name: Install poetry
         uses: abatilo/actions-poetry@v2
-      - name: Install the project dependencies
+      - name: Install Rasa and dependencies
         run: poetry install
-#     - name: Run the automated tests (for example)
-#       run: poetry run pytest -v
+      - name: Verify that Rasa CLI is runnable
+        run: poetry run rasa --version
