@@ -25,4 +25,5 @@ jobs:
         env:
           RASA_PRO_LICENSE: aaaaa.bbbbb.ccccc
         run: |
-          [[ "$(poetry run rasa --version; exit 0)" =~ "Failed to validate Rasa Pro license" ]]; echo $?
+          [[ "$(poetry run rasa --version; exit 0)" =~ "Failed to validate Rasa Pro license" ]]
+          echo $?
