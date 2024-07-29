@@ -4783,13 +4783,13 @@ fire = "*"
 
 [[package]]
 name = "rasa-pro"
-version = "3.9.2"
+version = "3.9.4"
 description = "State-of-the-art open-core Conversational AI framework for Enterprises that natively leverages generative AI for effortless assistant development."
 optional = false
 python-versions = ">=3.8.1,<3.11"
 files = [
-    {file = "rasa_pro-3.9.2-py3-none-any.whl", hash = "sha256:d4730f60480ffd8ff4e00922893447ea94d66fae7b48b7471ee098a91a5653ca"},
-    {file = "rasa_pro-3.9.2.tar.gz", hash = "sha256:7111eca0e24057c32ebaf02654ad1e6b293ecec0ba5a172de600d925ef22b2b7"},
+    {file = "rasa_pro-3.9.4-py3-none-any.whl", hash = "sha256:648df3df7d4fb726267401904b0abdd7b8acf3942807f6d434f5e876661b6bc8"},
+    {file = "rasa_pro-3.9.4.tar.gz", hash = "sha256:e0ea99e5da789fd4ccb3c3f6b0ea69daed14902fcdc7d66bb4b7335c4e1ad40d"},
 ]
 
 [package.dependencies]
@@ -7276,4 +7276,4 @@ test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", 
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8.1,<3.11"
-content-hash = "ec1424a95d5c9b9e04653cb7622e4d59761647f39131fe90bcf37f4d2786add3"
+content-hash = "ab9eab5cb884726b6b921e0441bd789818ec2d8dbf1681d1fed6d9583390f910"
