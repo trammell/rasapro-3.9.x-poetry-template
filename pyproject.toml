@@ -8,7 +8,7 @@ readme = "README.md"
 package-mode = false
 
 [tool.poetry.dependencies]
-python = ">=3.8.1,<3.11"
+python = ">=3.12.5,<3.13"
 rasa-pro = { version = "3.9.5", source = "rasa-pro-python" }
 
 [[tool.poetry.source]]
