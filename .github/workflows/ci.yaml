@@ -25,7 +25,7 @@ jobs:
       - name: Save the output of 'rasa --version'
         continue-on-error: true
         env:
-          RASA_PRO_LICENSE: aaaaa.bbbbb.ccccc
+          RASA_PRO_LICENSE: eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJTcGFya3kgdGhlIENhdCIsIlVzZXJuYW1lIjoiU3Bhcmt5QGV4YW1wbGUuY29tIiwiZXhwIjo0MDg5OTEzMTgyLCJpYXQiOjE3MjMxNTc5ODJ9.4tn-zNQaxwnVMrQYDnPr3mtBsHTSMM17VQdmGbeLOqU
         run: |
           echo "RASA_RUN_STDOUT='$(poetry run rasa --version 2>&1)'" >> $GITHUB_ENV
       - name: Compare actual output to known good
